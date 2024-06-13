@@ -3,8 +3,8 @@ import * as S from './styles'
 
 type Props = {
   produto: ProdutoType
-  aoComprar: (produto: ProdutoType) => void
   favoritar: (produto: ProdutoType) => void
+  adicionarAoCarrinho: (produto: ProdutoType) => void
   estaNosFavoritos: boolean
 }
 
@@ -15,8 +15,8 @@ export const paraReal = (valor: number) =>
 
 const ProdutoComponent = ({
   produto,
-  aoComprar,
   favoritar,
+  adicionarAoCarrinho,
   estaNosFavoritos
 }: Props) => {
   return (
@@ -33,7 +33,7 @@ const ProdutoComponent = ({
           ? '- Remover dos favoritos'
           : '+ Adicionar aos favoritos'}
       </S.BtnComprar>
-      <S.BtnComprar onClick={() => aoComprar(produto)} type="button">
+      <S.BtnComprar onClick={() => adicionarAoCarrinho(produto)} type="button">
         Adicionar ao carrinho
       </S.BtnComprar>
     </S.Produto>
